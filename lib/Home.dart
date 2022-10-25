@@ -92,9 +92,15 @@ class HeroSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 500,
-      color: Colors.white,
+      //color: Colors.white,
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage('assets/images/leaves.jpg'),
+          fit: BoxFit.fitWidth,
+        )
+      ),
       width: MediaQuery.of(context).size.width,
-      child: Column(children: [const Navbar(),section()],),
+      child: Column(children: [Navbar(const Color(0xff0FB700),Color(0xff0FB700),Colors.white,Color(0xff0FB700),Color(0xff0FB700),Color(0xff0FB700)),section()],),
     );
   }
 }
@@ -109,11 +115,11 @@ class MarketSection extends StatelessWidget {
       width: size * MediaQuery.of(context).size.width,
       decoration: BoxDecoration(
         image: const DecorationImage(
-          image: AssetImage('assets/images/grains.jpg',),
+          image: AssetImage('assets/images/produce.jpg'),
           fit: BoxFit.fill,
         ),
         borderRadius: BorderRadius.circular(15),
-        boxShadow: const [
+        boxShadow: [
           BoxShadow(
             blurRadius: 3,
             offset: Offset(0,7),
@@ -122,7 +128,175 @@ class MarketSection extends StatelessWidget {
         ]
       ),
       alignment: Alignment.center,
-      child: Text("Land",style: TextStyle(color: Colors.white,fontSize: 30),),
+      child: Text("Produces",style: const TextStyle(color: Colors.white,fontSize: 30),textAlign: TextAlign.center,),
+    );
+  }
+
+  land(BuildContext context,double size)
+  {
+    return Container(
+      height: 200,
+      width: size * MediaQuery.of(context).size.width,
+      decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/land.png'),
+            fit: BoxFit.fill,
+          ),
+          borderRadius: BorderRadius.circular(15),
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 3,
+              offset: Offset(0,7),
+              color: Colors.black26,
+            )
+          ]
+      ),
+      alignment: Alignment.center,
+      child: const Text("Farm Land",style: TextStyle(color: Colors.white,fontSize: 30),textAlign: TextAlign.center,),
+    );
+  }
+
+  inputs(BuildContext context,double size)
+  {
+    return Container(
+      height: 200,
+      width: size * MediaQuery.of(context).size.width,
+      decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/inputs.png'),
+            fit: BoxFit.fill,
+          ),
+          borderRadius: BorderRadius.circular(15),
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 3,
+              offset: Offset(0,7),
+              color: Colors.black26,
+            )
+          ]
+      ),
+      alignment: Alignment.center,
+      child: const Text("Farm Inputs",style: TextStyle(color: Colors.white,fontSize: 30),textAlign: TextAlign.center,),
+    );
+  }
+
+  machinery(BuildContext context,double size)
+  {
+    return Container(
+      height: 200,
+      width: size * MediaQuery.of(context).size.width,
+      decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/tractor.png'),
+            fit: BoxFit.fill,
+          ),
+          borderRadius: BorderRadius.circular(15),
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 3,
+              offset: Offset(0,7),
+              color: Colors.black26,
+            )
+          ]
+      ),
+      alignment: Alignment.center,
+      child: const Text("Farm Machinery",style: TextStyle(color: Colors.white,fontSize: 30),textAlign: TextAlign.center,),
+    );
+  }
+
+  storage(BuildContext context,double size)
+  {
+    return Container(
+      height: 200,
+      width: size * MediaQuery.of(context).size.width,
+      decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/storage.png'),
+            fit: BoxFit.fill,
+          ),
+          borderRadius: BorderRadius.circular(15),
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 3,
+              offset: Offset(0,7),
+              color: Colors.black26,
+            )
+          ]
+      ),
+      alignment: Alignment.center,
+      child: const Text("Storage",style: TextStyle(color: Colors.white,fontSize: 30),textAlign: TextAlign.center,),
+    );
+  }
+
+  warehouse(BuildContext context,double size)
+  {
+    return Container(
+      height: 200,
+      width: size * MediaQuery.of(context).size.width,
+      decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/warehouse.png'),
+            fit: BoxFit.fill,
+          ),
+          borderRadius: BorderRadius.circular(15),
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 3,
+              offset: Offset(0,7),
+              color: Colors.black26,
+            )
+          ]
+      ),
+      alignment: Alignment.center,
+      child: const Text("Warehouse",style: TextStyle(color: Colors.white,fontSize: 30),textAlign: TextAlign.center,),
+    );
+  }
+
+  finance(BuildContext context,double size)
+  {
+    return Container(
+      height: 200,
+      width: size * MediaQuery.of(context).size.width,
+      decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/finance.png'),
+            fit: BoxFit.fill,
+          ),
+          borderRadius: BorderRadius.circular(15),
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 3,
+              offset: Offset(0,7),
+              color: Colors.black26,
+            )
+          ]
+      ),
+      alignment: Alignment.center,
+      child: const Text("Finance",style: TextStyle(color: Colors.white,fontSize: 30),textAlign: TextAlign.center,),
+    );
+  }
+
+  logistic(BuildContext context,double size)
+  {
+    return Container(
+      height: 200,
+      width: size * MediaQuery.of(context).size.width,
+      decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/images/logistic.png'),
+            fit: BoxFit.fill,
+          ),
+          borderRadius: BorderRadius.circular(15),
+          boxShadow: [
+            BoxShadow(
+              blurRadius: 3,
+              offset: Offset(0,7),
+              color: Colors.black26,
+            )
+          ]
+      ),
+      alignment: Alignment.center,
+      child: const Text("Logistics",style: TextStyle(color: Colors.white,fontSize: 30),textAlign: TextAlign.center,),
     );
   }
 
@@ -142,14 +316,14 @@ class MarketSection extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                produce(context,0.2),produce(context,0.2),produce(context,0.2),produce(context,0.2)
+                produce(context,0.2),land(context,0.2),inputs(context,0.2),machinery(context,0.2)
               ],
             ),
             const SizedBox(height: 40,),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                produce(context,0.2),produce(context,0.2),produce(context,0.2),produce(context,0.2)
+                storage(context,0.2),warehouse(context,0.2),finance(context,0.2),logistic(context,0.2)
               ],
             )
           ],);
@@ -161,19 +335,19 @@ class MarketSection extends StatelessWidget {
             const SizedBox(height: 20,),
             produce(context,0.6),
             const SizedBox(height: 30,),
-            produce(context,0.6),
+            land(context,0.6),
             const SizedBox(height: 30,),
-            produce(context,0.6),
+            inputs(context,0.6),
             const SizedBox(height: 30,),
-            produce(context,0.6),
+            machinery(context,0.6),
             const SizedBox(height: 30,),
-            produce(context,0.6),
+            storage(context,0.6),
             const SizedBox(height: 30,),
-            produce(context,0.6),
+            warehouse(context,0.6),
             const SizedBox(height: 30,),
-            produce(context,0.6),
+            finance(context,0.6),
             const SizedBox(height: 30,),
-            produce(context,0.6)
+            logistic(context,0.6)
           ],);
       }
     }),
@@ -360,45 +534,3 @@ class FooterState extends State<Footer> {
 
   }
 }
-
-/*final emailController = TextEditingController();
-    return Column(
-      children: [const Text('Join Our Newsletter',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 20),),
-        const SizedBox(height: 5,),
-        SizedBox(width: size * MediaQuery.of(context).size.width,
-          child: TextField(
-            decoration: const InputDecoration(
-              labelText: 'Your Email',fillColor: Colors.white,filled: true,),
-            controller: emailController,
-          ), ),
-        const SizedBox(height: 10,),
-        MaterialButton(onPressed: (){
-
-        },
-          color: const Color(0xff5092EF),
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
-          child: const Text('Subscribe',style: TextStyle(color: Colors.white,fontStyle: FontStyle.normal),),),
-        const SizedBox(height: 30,),],
-
-
-        return Column(
-      crossAxisAlignment: alignment,
-      children: [const Text('Follow us on',style: TextStyle(color: Colors.white,fontFamily: 'Poppins-Regular'),),
-        const SizedBox(height: 5,),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [IconButton(onPressed: (){}, icon: const FaIcon(FontAwesomeIcons.instagram,color: Colors.white,size: 20,)),
-            IconButton(onPressed: (){}, icon: const FaIcon(FontAwesomeIcons.facebook,color: Colors.white,size: 20,)),
-            IconButton(onPressed: (){}, icon: const FaIcon(FontAwesomeIcons.twitter,color: Colors.white,size: 20,))],),
-        const SizedBox(height: 10,),
-        Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [FaIcon(FontAwesomeIcons.phone,color: Colors.white,size: 15,),Text('  +2348079279899',style: TextStyle(color: Colors.white),),]),
-        const SizedBox(height: 10,),
-        Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [FaIcon(FontAwesomeIcons.envelope,color: Colors.white,size: 15,),Text('  hello@codexafrica.com',style: TextStyle(color: Colors.white),),]),
-        const SizedBox(height: 50,),
-        const Text('\u00a9 2022 CODEX AFRICA',style: TextStyle(color: Colors.white,fontSize: 15),),],
-    );
-    );*/
