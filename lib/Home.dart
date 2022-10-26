@@ -1,4 +1,5 @@
 
+import 'package:agros/Login.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -50,7 +51,9 @@ class HeroSection extends StatelessWidget {
               const SizedBox(height: 10,),
               MaterialButton(
                 onPressed: (){
-
+                  onTap: (){ Navigator.push(context, MaterialPageRoute(builder: (context)=> const LoginPage()),);
+                    //navBarColorChange(const Color(0xff5092EF), Colors.green, Colors.white, Colors.green, Colors.green,Color(0xff0FB700));
+                  };
               },color: Color(0xff196D12),
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                 child: const Text('Sign Up',style: TextStyle(color: Colors.white,),),)],),
@@ -72,6 +75,7 @@ class HeroSection extends StatelessWidget {
                 const Text("We are connecting farmers and buyers to their needs in agriculture.",textAlign: TextAlign.center,),
                 const SizedBox(height: 10,),
                 MaterialButton(onPressed: (){
+
                 },color:  Color(0xff196D12),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                   child: const Text('Sign Up',style: TextStyle(color: Colors.white),),),
@@ -95,7 +99,7 @@ class HeroSection extends StatelessWidget {
       //color: Colors.white,
       decoration: const BoxDecoration(
         image: DecorationImage(
-          image: AssetImage('assets/images/leaves.jpg'),
+          image: AssetImage('assets/images/flower.png'),
           fit: BoxFit.fitWidth,
         )
       ),
@@ -132,8 +136,7 @@ class MarketSection extends StatelessWidget {
     );
   }
 
-  land(BuildContext context,double size)
-  {
+  land(BuildContext context,double size) {
     return Container(
       height: 200,
       width: size * MediaQuery.of(context).size.width,

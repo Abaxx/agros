@@ -1,4 +1,6 @@
 
+import 'package:agros/AboutUs.dart';
+import 'package:agros/Login.dart';
 import 'package:agros/Market.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -67,10 +69,9 @@ class _DesktopNavbarState extends State<DesktopNavbar> {
               })),
             const SizedBox(width: 20),
             RichText(text: TextSpan(text: 'About Us',style:  TextStyle(color: about_color,fontSize: 20),
-                /*recognizer: TapGestureRecognizer()..onTap = (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=> const AboutPage()),);
-                  navBarColorChange(Colors.white, const Color(0xff5092EF), Colors.white, Colors.white, Colors.white);
-                }*/),),
+                recognizer: TapGestureRecognizer()..onTap = (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> const AboutUsPage()),);
+                }),),
             const SizedBox(width: 20),
             Container(
               //color: Colors.green,
@@ -96,9 +97,8 @@ class _DesktopNavbarState extends State<DesktopNavbar> {
             )),
             const SizedBox(width: 20),
             RichText(text: TextSpan(text: 'Login',style: TextStyle(color: login_color,fontSize: 20),
-                /*recognizer: TapGestureRecognizer()..onTap = (){
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=> const NewsPage()),);
-                  navBarColorChange(Colors.white, Colors.white, Colors.white, Colors.white, const Color(0xff5092EF));}*/))
+                recognizer: TapGestureRecognizer()..onTap = (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> const LoginPage()),);}))
           ],)],
       ),
     );

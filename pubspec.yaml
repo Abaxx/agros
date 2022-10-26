@@ -67,14 +67,14 @@ flutter:
      - assets/images/land.png
      - assets/images/finance.png
      - assets/images/inputs.png
-     - assets/images/leaves.jpg
-     - assets/images/leaves2.png
      - assets/images/logistic.png
      - assets/images/produce.png
      - assets/images/produce.jpg
      - assets/images/storage.png
      - assets/images/tractor.png
      - assets/images/warehouse.png
+     - assets/images/flower.png
+     - assets/images/greek.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
