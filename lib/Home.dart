@@ -1,5 +1,6 @@
 
 import 'package:agros/Login.dart';
+import 'package:agros/SignUp.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -23,7 +24,7 @@ class HomePage extends StatelessWidget {
               title: Text('Agros',style: const TextStyle(color: Colors.white),),
               centerTitle: true,
             ),
-            //drawer: createDrawer(context),
+            drawer: createDrawer(context),
             body:  SingleChildScrollView(child: Column(children: const [HeroSection(),MarketSection(),Footer()],))
         );
       }
@@ -51,15 +52,14 @@ class HeroSection extends StatelessWidget {
               const SizedBox(height: 10,),
               MaterialButton(
                 onPressed: (){
-                  onTap: (){ Navigator.push(context, MaterialPageRoute(builder: (context)=> const LoginPage()),);
+                   Navigator.push(context, MaterialPageRoute(builder: (context)=> const SignUpPage()),);
                     //navBarColorChange(const Color(0xff5092EF), Colors.green, Colors.white, Colors.green, Colors.green,Color(0xff0FB700));
-                  };
               },color: Color(0xff196D12),
                 shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                 child: const Text('Sign Up',style: TextStyle(color: Colors.white,),),)],),
             Image.asset('assets/images/farmer_and_buyer.png',height: 400,width: 0.35 * MediaQuery.of(context).size.width,)],);
   }
-  mobileView()
+  mobileView(BuildContext context)
   {
     return Padding(
         padding: const EdgeInsets.only(top: 15),
@@ -75,37 +75,44 @@ class HeroSection extends StatelessWidget {
                 const Text("We are connecting farmers and buyers to their needs in agriculture.",textAlign: TextAlign.center,),
                 const SizedBox(height: 10,),
                 MaterialButton(onPressed: (){
-
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> const SignUpPage()),);
                 },color:  Color(0xff196D12),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                   child: const Text('Sign Up',style: TextStyle(color: Colors.white),),),
       ]),
     );
   }
-  // Hero Section
-  section()
-  {
-    return LayoutBuilder(builder: (context,constraints){
-      if(constraints.biggest.width > 800){
-        return desktopView(context);
-      }else {return mobileView();}
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 500,
-      //color: Colors.white,
-      decoration: const BoxDecoration(
-        image: DecorationImage(
-          image: AssetImage('assets/images/flower.png'),
-          fit: BoxFit.fitWidth,
-        )
-      ),
-      width: MediaQuery.of(context).size.width,
-      child: Column(children: [Navbar(const Color(0xff0FB700),Color(0xff0FB700),Colors.white,Color(0xff0FB700),Color(0xff0FB700),Color(0xff0FB700)),section()],),
-    );
+    return LayoutBuilder(builder: (context,constraints){
+      if(constraints.biggest.width > 800){
+        return Container(
+          height: 500,
+          //color: Colors.white,
+          decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/images/flower.png'),
+                fit: BoxFit.fitWidth,
+              )
+          ),
+          width: MediaQuery.of(context).size.width,
+          child: Column(children: [Navbar(const Color(0xff0FB700),Color(0xff0FB700),Colors.white,Color(0xff0FB700),Color(0xff0FB700),Color(0xff0FB700)),desktopView(context)],),
+        );
+      }else {
+        return Container(
+          height: 350,
+          //color: Colors.white,
+          decoration: const BoxDecoration(
+              image: DecorationImage(
+                image: AssetImage('assets/images/flower.png'),
+                fit: BoxFit.fitWidth,
+              )
+          ),
+          width: MediaQuery.of(context).size.width,
+          child: Column(children: [Navbar(const Color(0xff0FB700),Color(0xff0FB700),Colors.white,Color(0xff0FB700),Color(0xff0FB700),Color(0xff0FB700)),mobileView(context)],),
+        );
+      }
+    });
   }
 }
 

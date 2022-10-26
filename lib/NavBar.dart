@@ -85,7 +85,6 @@ class _DesktopNavbarState extends State<DesktopNavbar> {
               child: RichText(text: TextSpan(text: 'Market',style: TextStyle(color: market_text_color,fontSize: 20),
                   recognizer: TapGestureRecognizer()..onTap = (){
                     Navigator.push(context, MaterialPageRoute(builder: (context)=> const MarketPage()),);
-                    //navBarColorChange(Colors.white, Colors.white, const Color(0xff5092EF), Colors.white, Colors.white);
                     },
               ),),
             ),
@@ -105,29 +104,36 @@ class _DesktopNavbarState extends State<DesktopNavbar> {
   }
 }
 
-// Drawer that contain navbar elements for mobile view
-/*Widget createDrawer(BuildContext context)
+ //Drawer that contain navbar elements for mobile view
+Widget createDrawer(BuildContext context)
 {
   return Drawer(
       child: Container(
         color: Colors.blueGrey,
-        child: ListView(padding: EdgeInsets.zero,
+        child: ListView(
           children: [
-            ListTile(title: const Text('Home',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 20)),onTap: (){
+            ListTile(title: const Text('Home',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 20),textAlign: TextAlign.center,),onTap: (){
               Navigator.push(context, MaterialPageRoute(builder: (context)=> const HomePage()),);
             },),
-            ListTile(title: const Text('About',style: TextStyle(color: Colors.white,fontSize: 20)),onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=> const AboutPage()),);
+            ListTile(title: const Text('About Us',style: TextStyle(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> const AboutUsPage()),);
             },),
-            ListTile(title: const Text('CodeTalk',style: TextStyle(color: Colors.white,fontSize: 20)),onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=> const CodeTalkPage()),);
+            ListTile(contentPadding: EdgeInsets.only(left: 90, right: 90),
+              title: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  color: Color(0xff0FB700),),
+                alignment: Alignment.center,
+                child: const Text('Market',style: TextStyle(color: Colors.white,fontSize: 20),),),
+              onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> const MarketPage()),);
             },),
-            ListTile(title: const Text('Events',style: TextStyle(color: Colors.white,fontSize: 20)),onTap: (){
+            ListTile(title: const Text('Contact Us',style: TextStyle(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),/*onTap: (){
               Navigator.push(context, MaterialPageRoute(builder: (context)=> const EventsPage()),);
-            },),
-            ListTile(title: const Text('News',style: TextStyle(color: Colors.white,fontSize: 20)),onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=> const NewsPage()),);
+            },*/),
+            ListTile(title: const Text('Login',style: TextStyle(color: Colors.white,fontSize: 20),textAlign: TextAlign.center,),onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> const LoginPage()),);
             },)
           ],),)
   );
-}*/
+}
